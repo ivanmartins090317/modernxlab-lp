@@ -178,3 +178,110 @@ All colors MUST be HSL.
     transform: translateX(-100%);
   }
 }
+
+/* Cybernetic Bento Grid Styles */
+.main-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1rem;
+  background: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted)));
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+  grid-auto-rows: minmax(200px, auto);
+}
+
+@media (min-width: 768px) {
+  .bento-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.bento-item {
+  @apply relative p-6 rounded-2xl border border-ash/10 bg-white/80 backdrop-blur-sm;
+  @apply hover:shadow-2xl hover:shadow-ghost-pepper/10 transition-all duration-500;
+  @apply cursor-pointer overflow-hidden;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+}
+
+.bento-item::before {
+  content: "";
+  @apply absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500;
+  background: radial-gradient(
+    300px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    hsl(var(--ghost-pepper) / 0.1),
+    transparent 40%
+  );
+  pointer-events: none;
+}
+
+.bento-item:hover::before {
+  @apply opacity-100;
+}
+
+.bento-item::after {
+  content: "";
+  @apply absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300;
+  background: linear-gradient(
+    135deg,
+    hsl(var(--ghost-pepper) / 0.05) 0%,
+    transparent 50%,
+    hsl(var(--ash) / 0.05) 100%
+  );
+  pointer-events: none;
+}
+
+.bento-item:hover::after {
+  @apply opacity-100;
+}
+
+/* Grid spans for different layouts */
+.bento-item.col-span-2 {
+  grid-column: span 1;
+}
+
+.bento-item.row-span-2 {
+  grid-row: span 1;
+}
+
+.bento-item.col-span-3 {
+  grid-column: span 1;
+}
+
+@media (min-width: 768px) {
+  .bento-item.col-span-2 {
+    grid-column: span 2;
+  }
+
+  .bento-item.row-span-2 {
+    grid-row: span 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bento-item.col-span-3 {
+    grid-column: span 3;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .bento-item {
+    min-height: 180px;
+  }
+}
