@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +15,7 @@ All colors MUST be HSL.
     --ghost-pepper: 80 94% 76%;
     --rebel: 50 35% 20%;
     --chili: 20 90% 48%;
-    
+
     /* Design System Colors */
     --background: 0 0% 100%;
     --foreground: var(--ash);
@@ -49,11 +51,11 @@ All colors MUST be HSL.
     --gradient-hero: linear-gradient(135deg, hsl(var(--ash)), hsl(var(--rebel)));
     --gradient-accent: linear-gradient(90deg, hsl(var(--ghost-pepper)), hsl(80 80% 70%));
     --gradient-overlay: linear-gradient(180deg, transparent, hsl(var(--ash) / 0.8));
-    
+
     /* Shadows */
     --shadow-glow: 0 0 20px hsl(var(--ghost-pepper) / 0.3);
     --shadow-elegant: 0 10px 30px -10px hsl(var(--ash) / 0.2);
-    
+
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -121,7 +123,16 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  /* Tipografia do Design System */
+  .heading-font {
+    font-family: "Space Grotesk", "Orbitron", "Eurostile", sans-serif;
+  }
+
+  .body-font {
+    font-family: "Inter", "Poppins", "Neue Haas", sans-serif;
   }
 }
 
@@ -129,29 +140,41 @@ All colors MUST be HSL.
   .hero-gradient {
     background: var(--gradient-hero);
   }
-  
+
   .accent-gradient {
     background: var(--gradient-accent);
   }
-  
+
   .glow-effect {
     box-shadow: var(--shadow-glow);
   }
-  
+
   .elegant-shadow {
     box-shadow: var(--shadow-elegant);
   }
-  
+
   .smooth-transition {
     transition: var(--transition-smooth);
   }
-  
+
   .bounce-transition {
     transition: var(--transition-bounce);
   }
-  
+
   .glass-effect {
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
