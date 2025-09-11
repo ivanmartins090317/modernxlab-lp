@@ -1,117 +1,114 @@
-import {Card, CardContent} from "@/components/ui/card";
-import {Star, Quote} from "lucide-react";
+import {TestimonialsColumn} from "@/components/ui/testimonials-columns-1";
+import {motion} from "motion/react";
+
+const testimonials = [
+  {
+    text: "A Modern X Lab transformou completamente nossa visão sobre tecnologia. O resultado superou todas as expectativas e nos posicionou como líderes no mercado.",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    name: "Carlos Silva",
+    role: "CTO - TechBank"
+  },
+  {
+    text: "Profissionalismo excepcional e entrega impecável. A equipe conseguiu traduzir nossa visão em uma solução tecnológica revolucionária.",
+    image:
+      "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    name: "Ana Rodriguez",
+    role: "CEO - ShopFlow"
+  },
+  {
+    text: "A plataforma desenvolvida revolucionou nosso atendimento. Conseguimos alcançar muito mais pacientes com qualidade superior.",
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+    name: "Dr. Roberto Lima",
+    role: "Diretor Médico - MedConnect"
+  },
+  {
+    text: "Parceria estratégica que gerou resultados extraordinários. A Modern X Lab não apenas entregou uma solução, mas uma transformação completa.",
+    image:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+    name: "Marina Costa",
+    role: "Head of Innovation - RetailTech"
+  },
+  {
+    text: "A solução implementada revolucionou nossa operação. Conseguimos aumentar significativamente nossa eficiência e satisfação dos clientes.",
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+    name: "Pedro Santos",
+    role: "Diretor de Operações - DataCorp"
+  },
+  {
+    text: "Excelente trabalho da equipe Modern X Lab. A plataforma desenvolvida superou todas as nossas expectativas e nos deu uma vantagem competitiva.",
+    image:
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
+    name: "Luciana Ferreira",
+    role: "CTO - CloudSys"
+  },
+  {
+    text: "A transformação digital que a Modern X Lab nos proporcionou foi fundamental para nosso crescimento. Recomendo sem hesitação.",
+    image:
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face",
+    name: "Rafael Oliveira",
+    role: "CEO - TechFlow"
+  },
+  {
+    text: "Profissionalismo e qualidade excepcionais. A equipe entendeu perfeitamente nossas necessidades e entregou uma solução perfeita.",
+    image:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
+    name: "Camila Mendes",
+    role: "Diretora de TI - InnovateCorp"
+  },
+  {
+    text: "A parceria com a Modern X Lab foi fundamental para nosso sucesso. A solução implementada revolucionou nossos processos internos.",
+    image:
+      "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face",
+    name: "Diego Alves",
+    role: "Head of Product - NextGen"
+  }
+];
+
+const firstColumn = testimonials.slice(0, 3);
+const secondColumn = testimonials.slice(3, 6);
+const thirdColumn = testimonials.slice(6, 9);
 
 const Testimonials = () => {
-  const testimonials = [
-    {
-      name: "Carlos Silva",
-      position: "CTO - TechBank",
-      company: "FinTech Revolution",
-      content:
-        "A Modern X Lab transformou completamente nossa visão sobre tecnologia. O resultado superou todas as expectativas e nos posicionou como líderes no mercado.",
-      rating: 5,
-      avatar: "CS",
-      metric: "+300% crescimento"
-    },
-    {
-      name: "Ana Rodriguez",
-      position: "CEO - ShopFlow",
-      company: "E-commerce Platform",
-      content:
-        "Profissionalismo excepcional e entrega impecável. A equipe conseguiu traduzir nossa visão em uma solução tecnológica revolucionária.",
-      rating: 5,
-      avatar: "AR",
-      metric: "+250% vendas"
-    },
-    {
-      name: "Dr. Roberto Lima",
-      position: "Diretor Médico - MedConnect",
-      company: "HealthTech Solution",
-      content:
-        "A plataforma desenvolvida revolucionou nosso atendimento. Conseguimos alcançar muito mais pacientes com qualidade superior.",
-      rating: 5,
-      avatar: "RL",
-      metric: "+400% eficiência"
-    },
-    {
-      name: "Marina Costa",
-      position: "Head of Innovation - RetailTech",
-      company: "Retail Transformation",
-      content:
-        "Parceria estratégica que gerou resultados extraordinários. A Modern X Lab não apenas entregou uma solução, mas uma transformação completa.",
-      rating: 5,
-      avatar: "MC",
-      metric: "+180% conversão"
-    }
-  ];
-
   return (
-    <section id="testimonials" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-ash mb-6 font-heading">
+    <section id="testimonials" className="py-20 bg-muted/30  relative">
+      <div className="container z-10 mx-auto px-6">
+        <motion.div
+          initial={{opacity: 0, y: 20}}
+          whileInView={{opacity: 1, y: 0}}
+          transition={{duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1]}}
+          viewport={{once: true}}
+          className="flex flex-col items-center justify-center max-w-[540px] mx-auto mb-16"
+        >
+          {/* <div className="flex justify-center mb-4">
+            <div className="border border-ghost-pepper/30 py-1 px-4 rounded-lg bg-ghost-pepper/10 text-ghost-pepper font-semibold">
+              Depoimentos
+            </div>
+          </div> */}
+
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-ash font-heading text-center">
             O Que Dizem Nossos Clientes
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-center mt-5 text-muted-foreground text-lg max-w-2xl">
             Depoimentos reais de empresas que confiaram em nossa expertise para
             transformar seus negócios
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Card
-              key={testimonial.name}
-              className="group hover:shadow-xl smooth-transition border-0 bg-white elegant-shadow animate-slide-up"
-              style={{animationDelay: `${index * 0.1}s`}}
-            >
-              <CardContent className="p-6 relative">
-                {/* Quote Icon */}
-                <Quote
-                  className="absolute top-4 right-4 text-ghost-pepper/20"
-                  size={32}
-                />
-
-                {/* Rating */}
-                <div className="flex items-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="text-yellow-400 fill-current" size={16} />
-                  ))}
-                </div>
-
-                {/* Content */}
-                <p className="text-muted-foreground mb-6 leading-relaxed italic">
-                  "{testimonial.content}"
-                </p>
-
-                {/* Author Info */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-ghost-pepper rounded-full flex items-center justify-center text-ash font-bold mr-4">
-                      {testimonial.avatar}
-                    </div>
-                    <div>
-                      <div className="font-semibold text-ash">{testimonial.name}</div>
-                      <div className="text-sm text-muted-foreground">
-                        {testimonial.position}
-                      </div>
-                      <div className="text-xs text-muted-foreground">
-                        {testimonial.company}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Metric */}
-                  <div className="text-right">
-                    <div className="text-sm font-bold text-ghost-pepper">
-                      {testimonial.metric}
-                    </div>
-                    <div className="text-xs text-muted-foreground">Resultado</div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden">
+          <TestimonialsColumn testimonials={firstColumn} duration={30} />
+          <TestimonialsColumn
+            testimonials={secondColumn}
+            className="hidden md:block"
+            duration={24}
+          />
+          <TestimonialsColumn
+            testimonials={thirdColumn}
+            className="hidden lg:block"
+            duration={20}
+          />
         </div>
 
         {/* Client Logos */}
@@ -126,9 +123,15 @@ const Testimonials = () => {
               "MedConnect",
               "RetailTech",
               "DataCorp",
-              "CloudSys"
+              "CloudSys",
+              "TechFlow",
+              "InnovateCorp",
+              "NextGen"
             ].map((company) => (
-              <div key={company} className="text-lg font-bold text-ash">
+              <div
+                key={company}
+                className="text-lg font-bold text-ash hover:text-ghost-pepper smooth-transition"
+              >
                 {company}
               </div>
             ))}

@@ -193,3 +193,4 @@ export const ColorPaletteDemo: React.FC = () => {
     </div>
   );
 };
+
