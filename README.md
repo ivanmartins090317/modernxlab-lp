@@ -1,73 +1,144 @@
-# Welcome to your Lovable project
+# Modern X Lab
 
-## Project info
+> Soluções Tecnológicas Inovadoras para Empresas Visionárias
 
-**URL**: https://lovable.dev/projects/bc5180e1-581f-4ff4-9a11-eb02300c9f1b
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-## How can I edit this code?
+## 🚀 Sobre o Projeto
 
-There are several ways of editing your application.
+O **Modern X Lab** é uma plataforma web moderna que apresenta soluções tecnológicas inovadoras para empresas que buscam transformação digital. Desenvolvido com as mais recentes tecnologias do ecossistema React, oferece uma experiência de usuário excepcional e performance otimizada.
 
-**Use Lovable**
+## ✨ Características
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/bc5180e1-581f-4ff4-9a11-eb02300c9f1b) and start prompting.
+- 🎨 **Design Moderno**: Interface elegante e responsiva
+- ⚡ **Performance Otimizada**: Construído com Vite para máxima velocidade
+- 🔧 **TypeScript**: Código type-safe e manutenível
+- 🎭 **Componentes Reutilizáveis**: Baseado em shadcn/ui e Radix UI
+- 📱 **Responsivo**: Funciona perfeitamente em todos os dispositivos
+- 🎯 **SEO Otimizado**: Meta tags e estrutura otimizada para mecanismos de busca
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠️ Tecnologias Utilizadas
 
-**Use your preferred IDE**
+### Core
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **[Vite](https://vitejs.dev/)** - Build tool ultra-rápido
+- **[React 18](https://reactjs.org/)** - Biblioteca de interface de usuário
+- **[TypeScript](https://www.typescriptlang.org/)** - Superset tipado do JavaScript
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### UI/UX
 
-Follow these steps:
+- **[Tailwind CSS](https://tailwindcss.com/)** - Framework CSS utilitário
+- **[shadcn/ui](https://ui.shadcn.com/)** - Componentes de interface modernos
+- **[Radix UI](https://www.radix-ui.com/)** - Primitivos de UI acessíveis
+- **[Lucide React](https://lucide.dev/)** - Ícones modernos e consistentes
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Desenvolvimento
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- **[ESLint](https://eslint.org/)** - Linter para qualidade de código
+- **[PostCSS](https://postcss.org/)** - Processamento de CSS
+- **[React Router](https://reactrouter.com/)** - Roteamento client-side
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🚀 Início Rápido
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Pré-requisitos
+
+- **Node.js** 18+ ([instalar com nvm](https://github.com/nvm-sh/nvm))
+- **npm** ou **yarn**
+
+### Instalação
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/seu-usuario/modern-x-spark.git
+
+# 2. Entre no diretório
+cd modern-x-spark
+
+# 3. Instale as dependências
+npm install
+
+# 4. Inicie o servidor de desenvolvimento
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Scripts Disponíveis
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+# Desenvolvimento
+npm run dev          # Inicia servidor de desenvolvimento
 
-**Use GitHub Codespaces**
+# Build
+npm run build        # Build para produção
+npm run build:dev    # Build para desenvolvimento
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Qualidade
+npm run lint         # Executa linter
+npm run preview      # Preview do build de produção
+```
 
-## What technologies are used for this project?
+## 📁 Estrutura do Projeto
 
-This project is built with:
+```
+src/
+├── components/          # Componentes React
+│   ├── ui/             # Componentes de UI reutilizáveis
+│   ├── Header.tsx      # Cabeçalho da aplicação
+│   ├── Hero.tsx        # Seção hero
+│   └── ...
+├── pages/              # Páginas da aplicação
+├── hooks/              # Custom hooks
+├── lib/                # Utilitários e configurações
+└── assets/             # Recursos estáticos
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🎨 Design System
 
-## How can I deploy this project?
+O projeto utiliza um design system consistente baseado em:
 
-Simply open [Lovable](https://lovable.dev/projects/bc5180e1-581f-4ff4-9a11-eb02300c9f1b) and click on Share -> Publish.
+- **Cores**: Paleta moderna e profissional
+- **Tipografia**: Inter font para máxima legibilidade
+- **Espaçamento**: Sistema de grid responsivo
+- **Componentes**: Biblioteca padronizada de componentes
 
-## Can I connect a custom domain to my Lovable project?
+## 🚀 Deploy
 
-Yes, you can!
+### Build de Produção
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```bash
+npm run build
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Os arquivos otimizados serão gerados na pasta `dist/`.
+
+### Deploy Recomendado
+
+- **Vercel** - Deploy automático via Git
+- **Netlify** - Deploy com preview de branches
+- **GitHub Pages** - Deploy gratuito para projetos open source
+
+## 🤝 Contribuição
+
+1. Fork o projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 📞 Contato
+
+**Modern X Lab**
+
+- Website: [modernxlab.com](https://modernxlab.com)
+- Email: contato@modernxlab.com
+- LinkedIn: [Modern X Lab](https://linkedin.com/company/modern-x-lab)
+
+---
+
+Desenvolvido com ❤️ pela equipe Modern X Lab
